@@ -1,0 +1,18 @@
+{
+  "name": "setcroute",
+  "version": "1.0.0",
+  "description": "SETC Bus Route Finder Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/app.js",
+    "server": "nodemon backend/app.js",
+    "client": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
