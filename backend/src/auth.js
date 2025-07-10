@@ -5,7 +5,6 @@ const JWT_SECRET = process.env.JWT_SECRET || "your-secret-key";
 
 const auth = async (req, res, next) => {
   try {
-    // Get token from header
     const authHeader = req.header("Authorization");
 
     if (!authHeader) {

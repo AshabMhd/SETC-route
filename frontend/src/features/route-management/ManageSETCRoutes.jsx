@@ -10,13 +10,7 @@ import { authService } from "../../lib/services/auth";
 import RouteCard from "./components/RouteCard";
 import RouteModal from "./components/RouteModal";
 
-/**
- * Admin component for managing SETC bus routes
- * Provides CRUD functionality for creating, reading, updating, and deleting custom routes
- * These custom routes will appear in search results alongside official API routes
- */
 const ManageSETCRoutes = () => {
-  // State management
   const [routes, setRoutes] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -97,7 +91,7 @@ const ManageSETCRoutes = () => {
     }
   };
 
-  // Handle form submission (create/update)
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
@@ -136,7 +130,7 @@ const ManageSETCRoutes = () => {
 
   // Handle edit route
   const handleEdit = (route) => {
-    setCurrentRoute({ ...route }); // Ensure we clone the route object
+    setCurrentRoute({ ...route });
     setIsModalOpen(true);
     setError(null);
   };

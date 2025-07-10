@@ -6,12 +6,6 @@ import Login from "./features/auth/Login";
 import ProtectedRoute from "./features/auth/ProtectedRoute";
 import ManageSETCRoutes from "./features/route-management/ManageSETCRoutes";
 
-/**
- * Main App component that defines the application's routing structure
- * The application is focused on two main functionalities:
- * 1. Voice-based SETC bus route search for users (main dashboard)
- * 2. SETC route management for administrators (admin area)
- */
 const App = () => {
   return (
     <Routes>

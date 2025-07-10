@@ -1,8 +1,5 @@
-import { FaBusAlt } from 'react-icons/fa';
+import { FaBusAlt } from "react-icons/fa";
 
-/**
- * Footer component for the application
- */
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-5 border-t border-gray-700">
@@ -12,7 +9,9 @@ const Footer = () => {
           <span className="font-semibold">SETC Route Finder</span>
         </div>
         <div className="text-sm text-gray-400">
-          <p>© {new Date().getFullYear()} Voice-Based Transport Enquiry System</p>
+          <p>
+            © {new Date().getFullYear()} Voice-Based Transport Enquiry System
+          </p>
         </div>
       </div>
     </footer>

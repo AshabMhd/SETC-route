@@ -10,16 +10,13 @@ router.get("/", async (req, res) => {
     const { from, to } = req.query;
 
     const dbQuery = {};
-    // Build query only if 'from' or 'to' are provided and are non-empty strings
     if (from && typeof from === "string" && from.trim() !== "") {
-      dbQuery.from = new RegExp(from.trim(), "i"); // Case-insensitive match
+      dbQuery.from = new RegExp(from.trim(), "i");
     }
     if (to && typeof to === "string" && to.trim() !== "") {
-      dbQuery.to = new RegExp(to.trim(), "i"); // Case-insensitive match
+      dbQuery.to = new RegExp(to.trim(), "i");
     }
 
-    // If dbQuery is empty (no valid from/to provided), fetch all custom routes.
-    // Otherwise, filter by the constructed dbQuery.
     const queryToExecute = Object.keys(dbQuery).length > 0 ? dbQuery : {};
     const customRoutes = await SETCRoute.find(queryToExecute);
 
@@ -32,11 +29,8 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Protected routes - require authentication
-// Add a new custom route (admin only)
 router.post("/", auth, async (req, res) => {
   try {
-    // Set isCustom to true for all manually added routes
     const newRoute = new SETCRoute({
       ...req.body,
       isCustom: true,
@@ -52,7 +46,7 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-// Update a custom route (admin only)
+// Update a custom route
 router.put("/:id", auth, async (req, res) => {
   try {
     const updatedRoute = await SETCRoute.findByIdAndUpdate(
@@ -74,7 +68,7 @@ router.put("/:id", auth, async (req, res) => {
   }
 });
 
-// Delete a custom route (admin only)
+// Delete a custom route
 router.delete("/:id", auth, async (req, res) => {
   try {
     const deletedRoute = await SETCRoute.findByIdAndDelete(req.params.id);

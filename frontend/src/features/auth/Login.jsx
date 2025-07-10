@@ -3,10 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { FaBusAlt, FaKey, FaHome } from "react-icons/fa";
 import { authService } from "../../lib/services/auth";
 
-/**
- * Login component for admin authentication
- * Provides username/password authentication with error handling
- */
 const Login = () => {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({

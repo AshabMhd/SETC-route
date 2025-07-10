@@ -42,7 +42,6 @@ class AuthService {
       window.location.href = "/";
     } catch (error) {
       console.error("[Signout Error]:", error);
-      // Attempt to redirect even if there's an error clearing storage
       window.location.href = "/";
     }
   }
@@ -87,5 +86,4 @@ class AuthService {
   }
 }
 
-// Create and export a singleton instance
 export const authService = new AuthService();

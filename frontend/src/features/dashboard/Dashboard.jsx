@@ -6,11 +6,6 @@ import TextSearchSection from "../route-management/components/TextSearchSection"
 import RouteResults from "../route-management/components/RouteResults";
 import useSpeechRecognition from "../../lib/hooks/useSpeechRecognition";
 
-/**
- * Dashboard component with voice-enabled SETC bus route search functionality
- * This is the main interface where users can search for bus routes using voice commands
- * or text input. The component uses the Web Speech API for voice recognition.
- */
 const Dashboard = () => {
   const [routes, setRoutes] = useState([]);
   const [loading, setLoading] = useState(false);

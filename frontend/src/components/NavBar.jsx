@@ -25,10 +25,6 @@ const AdminButton = ({ onClick, className }) => (
   </button>
 );
 
-/**
- * Main navigation component
- * Provides responsive navigation with mobile menu support
- */
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();

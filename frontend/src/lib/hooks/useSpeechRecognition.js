@@ -1,12 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 
-/**
- * Custom hook for handling Web Speech API speech recognition
- * @param {Object} options
- * @param {Function} options.onResult - Callback function called with transcript when speech is recognized
- * @param {Function} options.onError - Callback function called when an error occurs
- * @returns {Object} Speech recognition controls and state
- */
 const useSpeechRecognition = ({ onResult, onError }) => {
   const [listening, setListening] = useState(false);
   const [transcript, setTranscript] = useState("");
